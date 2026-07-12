@@ -307,6 +307,36 @@
 </head>
 <body>
 
+<!-- Password Gate -->
+<div id="gate" style="position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;">
+    <div style="text-align:center;font-family:'IBM Plex Mono',monospace;">
+        <div style="font-size:2.4rem;margin-bottom:0.3rem;">🔒</div>
+        <div style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;">HTB Writeup — Restricted</div>
+        <div style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;max-width:320px;line-height:1.6;">This writeup contains spoilers for an active HTB machine.<br>Enter the password to continue.</div>
+        <input id="gate-pw" type="password" placeholder="Password" autofocus
+            style="background:var(--surface);border:1px solid var(--border);color:var(--heading);padding:0.6rem 1rem;border-radius:4px;font-family:inherit;font-size:0.9rem;width:220px;text-align:center;outline:none;"
+            onkeydown="if(event.key==='Enter')checkPw()">
+        <br>
+        <button onclick="checkPw()"
+            style="margin-top:0.8rem;background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent);padding:0.5rem 1.8rem;border-radius:4px;font-family:inherit;font-size:0.82rem;cursor:pointer;letter-spacing:0.05em;">
+            Enter
+        </button>
+        <div id="gate-err" style="color:var(--red);font-size:0.78rem;margin-top:0.8rem;visibility:hidden;">Incorrect password</div>
+    </div>
+</div>
+<script>
+function checkPw(){
+    if(document.getElementById('gate-pw').value==='paperwork'){
+        document.getElementById('gate').style.display='none';
+        sessionStorage.setItem('htb-auth','1');
+    } else {
+        document.getElementById('gate-err').style.visibility='visible';
+        document.getElementById('gate-pw').value='';
+    }
+}
+if(sessionStorage.getItem('htb-auth')==='1') document.getElementById('gate').style.display='none';
+</script>
+
 <header class="hero">
     <div class="hero-inner">
         <div class="hero-label">Hack The Box — Walkthrough</div>
