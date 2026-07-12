@@ -5,3 +5,6 @@ Walkthrough writeups for Hack The Box machines.
 🔒 Password protected — contains spoilers for active machines.
 
 [View Writeup](https://zsc13810288137.github.io/htb-paperwork-writeups/)
+
+
+Tessera est nomen machinae
