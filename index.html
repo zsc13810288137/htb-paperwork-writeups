@@ -310,7 +310,7 @@
 <!-- Password Gate -->
 <div id="gate" style="position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;">
     <div style="text-align:center;font-family:'IBM Plex Mono',monospace;">
-        <div style="font-size:2.4rem;margin-bottom:0.3rem;">🔒</div>
+        <img src="paperwork-badge.png" alt="Paperwork" style="width:120px;height:120px;border-radius:50%;margin-bottom:1rem;border:2px solid var(--border);">
         <div style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;">HTB Writeup — Restricted</div>
         <div style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;max-width:320px;line-height:1.6;">This writeup contains spoilers for an active HTB machine.<br>Enter the password to continue.</div>
         <input id="gate-pw" type="password" placeholder="Password" autofocus
@@ -322,6 +322,7 @@
             Enter
         </button>
         <div id="gate-err" style="color:var(--red);font-size:0.78rem;margin-top:0.8rem;visibility:hidden;">Incorrect password</div>
+        <div style="color:var(--text-muted);font-size:0.7rem;margin-top:2rem;opacity:0.4;font-style:italic;direction:rtl;unicode-bidi:bidi-override;">Tessera est nomen machinae</div>
     </div>
 </div>
 <script>
@@ -339,11 +340,16 @@ if(sessionStorage.getItem('htb-auth')==='1') document.getElementById('gate').sty
 
 <header class="hero">
     <div class="hero-inner">
-        <div class="hero-label">Hack The Box — Walkthrough</div>
-        <h1><span>Paperwork</span></h1>
-        <div class="hero-meta">
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+            <img src="paperwork-badge.png" alt="Paperwork" style="width:80px;height:80px;border-radius:50%;border:2px solid var(--border);">
+            <div>
+                <div class="hero-label">Hack The Box — Walkthrough</div>
+                <h1><span>Paperwork</span></h1>
+            </div>
+        </div>
+        <div class="hero-meta" style="margin-top:1.2rem;">
             <span>OS <strong>Linux</strong></span>
-            <span>Difficulty <strong>Medium</strong></span>
+            <span>Difficulty <strong>Easy</strong></span>
             <span>Ports <strong>22 · 80 · 1515</strong></span>
             <span>Author <strong>Senchuan</strong></span>
         </div>
